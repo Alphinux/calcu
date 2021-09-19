@@ -29,9 +29,10 @@ int main(int argc, char *argv[]) {
 		//Die Summe berechnen
 		solution = num1 + num2;
 	
-		printf("Das Ergebnis ist %i + %i = %i \n", num1, num2, solution);
+		printf("%i + %i = %i \n", num1, num2, solution);
 		return 0;
 	}
+	
 	else if(strcmp(argv[1], "-s") == 0) {
 		printf("You selected subtraction \n");
 		
@@ -45,8 +46,23 @@ int main(int argc, char *argv[]) {
 		solution = num1 - num2;
 		
 		printf("%i - %i = %i \n", num1, num2, solution);
-		
 	}
+	
+	else if(strcmp(argv[1], "-m") == 0) { 
+		printf("You have selected multiplication \n")
+		
+		printf("Enter the first factor: ")
+		scanf("%i", &num1);
+		
+		printf("Enter the second factor: ")
+		scanf("%i", &num2);
+		
+		//Calculate the product
+		solution = num1*num2
+		
+		printf("%i * %i = %i \n", num1, num2, solution);
+	}
+	
 	else if(strcmp(argv[1], "-h") == 0) {
 		help();
 	}
