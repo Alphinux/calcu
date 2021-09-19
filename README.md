@@ -11,6 +11,6 @@ to enter the downloaded folder.
 Make the install script executable by typing
 ```chmod +x install.sh```.
 After that issue the command
-```./install.sh```.
+```sudo ./install.sh```.
 If everything goes right you should read:
 > Installation finished
