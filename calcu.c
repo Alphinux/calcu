@@ -10,7 +10,7 @@ int help() {
 
 int main(int argc, char *argv[]) {
 	
-	int num1, num2, solution;
+	float num1, num2, solution;
 	
 	if (argv[1] == NULL || !strcmp(argv[1], "")) {
 		help();
@@ -21,15 +21,14 @@ int main(int argc, char *argv[]) {
 		printf("You selected addition \n");
 	
 		printf("Enter first number: ");
-		scanf("%i", &num1);
+		scanf("%f", &num1);
 		
 		printf("Enter second number: ");
-		scanf("%i", &num2);
+		scanf("%f", &num2);
 		
-		//Die Summe berechnen
 		solution = num1 + num2;
 	
-		printf("%i + %i = %i \n", num1, num2, solution);
+		printf("%f + %f = %f \n", num1, num2, solution);
 		return 0;
 	}
 	
@@ -37,30 +36,42 @@ int main(int argc, char *argv[]) {
 		printf("You selected subtraction \n");
 		
 		printf("Enter minuend: ");
-		scanf("%i", &num1);
+		scanf("%f", &num1);
 		
 		printf("Enter subtrahend: ");
-		scanf("%i", &num2);
+		scanf("%f", &num2);
 		
-		//Calculate the difference
 		solution = num1 - num2;
 		
-		printf("%i - %i = %i \n", num1, num2, solution);
+		printf("%f - %f = %f \n", num1, num2, solution);
 	}
 	
 	else if(strcmp(argv[1], "-m") == 0) { 
 		printf("You have selected multiplication \n");
 		
 		printf("Enter the first factor: ");
-		scanf("%i", &num1);
+		scanf("%f", &num1);
 		
 		printf("Enter the second factor: ");
-		scanf("%i", &num2);
-		
-		//Calculate the product
+		scanf("%f", &num2);
+
 		solution = num1*num2;
 		
-		printf("%i * %i = %i \n", num1, num2, solution);
+		printf("%f * %f = %f \n", num1, num2, solution);
+	}
+	
+	else if(strcmp(argv[1], "-d") == 0) {
+		printf("You ave selected division \n");
+		
+		printf("Enter the dividend: ");
+		scanf("%f", &num1);
+		
+		printf("Enter the divisor: ");
+		scanf("%f", &num2);
+		
+		solution = num1/num2;
+		
+		printf("%f : %f = %f \n", num1, num2, solution);
 	}
 	
 	else if(strcmp(argv[1], "-h") == 0) {
