@@ -4,7 +4,7 @@
 
 
 int help() {
-	printf("Usage: calcu --option\n\nCalcu is a simple calculator written in c.\nJust a small projekt nothing big. \n\nOptions:\n-h For help\n-a For addition\n-s For subtraction\n");
+	printf("Usage: calcu --option\n\nCalcu is a simple calculator written in c.\nJust a small projekt nothing big. \n\nOptions:\n-h For help\n-a For addition\n-s For subtraction\n-m For multiplication\n-d For division\n-lcm For lowest common multiple\n");
 }
 	
 
@@ -72,6 +72,29 @@ int main(int argc, char *argv[]) {
 		solution = num1/num2;
 		
 		printf("%f : %f = %f \n", num1, num2, solution);
+	}
+	
+	else if(strcmp(argv[1], "-lcm") == 0) {
+		
+		int num1, num2, solution;
+		
+		printf("You have selected the calculation of the least common multiple \n");
+		
+		printf("Enter the first number: ");
+		scanf("%i", &num1);
+		
+		printf("Enter the second number: ");
+		scanf("%i", &num2);
+		
+		solution = (num1 > num2) ? num1 : num2;
+		
+		while (1) {
+			if (solution % num1 == 0 && solution % num2 == 0) {
+				printf("The LCM of %d and %d is %d. \n", num1, num2, solution);
+				break;
+			}
+			++solution;
+		}
 	}
 	
 	else if(strcmp(argv[1], "-h") == 0) {
