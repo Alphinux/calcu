@@ -2,6 +2,12 @@
 
 CWD=$(pwd)
 
+OUT=$(pacman -Q)
+
+if [ "$OUT" = "" ]; then 
+	echo "You need to install gcc for this installation script."
+fi
+
 if [ "$1" = "-h" ]; then
 	echo "This is the install script for Calcu. If you want to install Calcu, use the option -S. If you want to uninstall Calcu use -R."
 	exit 0
