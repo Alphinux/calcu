@@ -49,16 +49,16 @@ int main(int argc, char *argv[]) {
 	}
 	
 	else if(strcmp(argv[1], "-m") == 0) { 
-		printf("You have selected multiplication \n")
+		printf("You have selected multiplication \n");
 		
-		printf("Enter the first factor: ")
+		printf("Enter the first factor: ");
 		scanf("%i", &num1);
 		
-		printf("Enter the second factor: ")
+		printf("Enter the second factor: ");
 		scanf("%i", &num2);
 		
 		//Calculate the product
-		solution = num1*num2
+		solution = num1*num2;
 		
 		printf("%i * %i = %i \n", num1, num2, solution);
 	}
