@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 CWD=$(pwd)
-
-OUT=$(pacman -Q)
-
+OUT=$(pacman -Q |  grep gcc)
 PLATFORM=$(uname)
 
 if [ "$PLATFORM" != "Linux" ]; then
