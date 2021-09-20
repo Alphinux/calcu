@@ -1,6 +1,8 @@
 #include <stdio.h>
-#include<string.h>
+#include <string.h>
 #include <stdlib.h>
+#include <math.h>
+
 
 
 int help() {
@@ -72,6 +74,21 @@ int main(int argc, char *argv[]) {
 		solution = num1/num2;
 		
 		printf("%f : %f = %f \n", num1, num2, solution);
+	}
+	
+	else if(strcmp(argv[1], "-p") == 0) {
+		
+		printf("You have selected potentation. \n");
+		
+		printf("Enter the number to be potentiated: ");
+		scanf("%f", &num1);
+		
+		printf("Enter the power: ");
+		scanf("%f", &num2);
+		
+		solution = powf(num1, num2);
+		
+		printf("%f ^ %f = %f \n", num1, num2, solution);	
 	}
 	
 	else if(strcmp(argv[1], "-lcm") == 0) {
