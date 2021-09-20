@@ -4,6 +4,13 @@ CWD=$(pwd)
 
 OUT=$(pacman -Q)
 
+PLATFORM=$(uname)
+
+if [ "$PLATFORM" != "Linux" ]; then
+	echo "This script currently only supports Linux."
+	exit 1
+fi
+
 if [ "$OUT" = "" ]; then 
 	echo "You need to install gcc for this installation script."
 fi
