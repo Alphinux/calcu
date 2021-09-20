@@ -9,7 +9,7 @@ int help() {
 	printf("Usage: calcu --option\n\nCalcu is a simple calculator written in c.\nJust a small projekt nothing big. \n\nOptions:\n-h For help\n-a For addition\n-s For subtraction\n-m For multiplication\n-d For division\n-lcm For lowest common multiple\n-gcd For greatest common divisor\n");
 }
 
-int	lcm(int num1, int num2) {
+int lcm(int num1, int num2) {
 	int solution;
 	solution = (num1 > num2) ? num1 : num2;
 	
@@ -144,6 +144,7 @@ int main(int argc, char *argv[]) {
 	else if(strcmp(argv[1], "-h") == 0) {
 		help();
 	}
+	
 	else
 		help();
 }
