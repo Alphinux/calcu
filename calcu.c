@@ -6,9 +6,27 @@
 
 
 int help() {
-	printf("Usage: calcu --option\n\nCalcu is a simple calculator written in c.\nJust a small projekt nothing big. \n\nOptions:\n-h For help\n-a For addition\n-s For subtraction\n-m For multiplication\n-d For division\n-lcm For lowest common multiple\n");
+	printf("Usage: calcu --option\n\nCalcu is a simple calculator written in c.\nJust a small projekt nothing big. \n\nOptions:\n-h For help\n-a For addition\n-s For subtraction\n-m For multiplication\n-d For division\n-lcm For lowest common multiple\n-gcd For greatest common divisor\n");
+}
+
+int	lcm(int num1, int num2) {
+	int solution;
+	solution = (num1 > num2) ? num1 : num2;
+	
+	while (1) {
+		if (solution % num1 == 0 && solution % num2 == 0) {
+			//printf("The LCM of %d and %d is %d. \n", num1, num2, solution);
+			return solution;
+		}
+		++solution;
+	}
 }
 	
+int gcd(int num1, int num2) {
+	if (num2 == 0)
+		return num1;
+	return gcd(num2, num1 % num2);
+}		
 
 int main(int argc, char *argv[]) {
 	
@@ -95,7 +113,7 @@ int main(int argc, char *argv[]) {
 		
 		int num1, num2, solution;
 		
-		printf("You have selected the calculation of the least common multiple \n");
+		printf("You have selected the calculation of the least common multiple. \n");
 		
 		printf("Enter the first number: ");
 		scanf("%i", &num1);
@@ -103,18 +121,29 @@ int main(int argc, char *argv[]) {
 		printf("Enter the second number: ");
 		scanf("%i", &num2);
 		
-		solution = (num1 > num2) ? num1 : num2;
+		solution = lcm(num1, num2);
+		printf("The LCM of %i and %i is %i. \n", num1, num2, solution);
+	}
+	
+	else if(strcmp(argv[1], "-gcd") == 0) {
 		
-		while (1) {
-			if (solution % num1 == 0 && solution % num2 == 0) {
-				printf("The LCM of %d and %d is %d. \n", num1, num2, solution);
-				break;
-			}
-			++solution;
-		}
+		int num1, num2, solution;
+		printf("You have selected the calculation of the greatest common divisor. \n");
+		
+		printf("Enter the first number: ");
+		scanf("%i", &num1);
+		
+		printf("Enter the second number: ");
+		scanf("%i", &num2);
+		
+		solution = gcd(num1, num2);
+		
+		printf("The GCD of %i and %i is %i. \n", num1, num2, solution);
 	}
 	
 	else if(strcmp(argv[1], "-h") == 0) {
 		help();
 	}
+	else
+		help();
 }
