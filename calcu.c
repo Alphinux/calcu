@@ -12,7 +12,7 @@ int help() {
 int lcm(int num1, int num2) {
 	int solution;
 	solution = (num1 > num2) ? num1 : num2;
-	
+
 	while (1) {
 		if (solution % num1 == 0 && solution % num2 == 0) {
 			//printf("The LCM of %d and %d is %d. \n", num1, num2, solution);
@@ -21,130 +21,130 @@ int lcm(int num1, int num2) {
 		++solution;
 	}
 }
-	
+
 int gcd(int num1, int num2) {
 	if (num2 == 0)
 		return num1;
 	return gcd(num2, num1 % num2);
-}		
+}
 
 int main(int argc, char *argv[]) {
-	
+
 	float num1, num2, solution;
-	
+
 	if (argv[1] == NULL || !strcmp(argv[1], "")) {
 		help();
 		return 0;
 	}
-	
+
 	if (strcmp(argv[1], "-a") == 0) {
 		printf("You selected addition \n");
-	
+
 		printf("Enter first number: ");
 		scanf("%f", &num1);
-		
+
 		printf("Enter second number: ");
 		scanf("%f", &num2);
-		
+
 		solution = num1 + num2;
-	
+
 		printf("%f + %f = %f \n", num1, num2, solution);
 		return 0;
 	}
-	
+
 	else if(strcmp(argv[1], "-s") == 0) {
 		printf("You selected subtraction \n");
-		
+
 		printf("Enter minuend: ");
 		scanf("%f", &num1);
-		
+
 		printf("Enter subtrahend: ");
 		scanf("%f", &num2);
-		
+
 		solution = num1 - num2;
-		
+
 		printf("%f - %f = %f \n", num1, num2, solution);
 	}
-	
-	else if(strcmp(argv[1], "-m") == 0) { 
+
+	else if(strcmp(argv[1], "-m") == 0) {
 		printf("You have selected multiplication \n");
-		
+
 		printf("Enter the first factor: ");
 		scanf("%f", &num1);
-		
+
 		printf("Enter the second factor: ");
 		scanf("%f", &num2);
 
 		solution = num1*num2;
-		
+
 		printf("%f * %f = %f \n", num1, num2, solution);
 	}
-	
+
 	else if(strcmp(argv[1], "-d") == 0) {
 		printf("You ave selected division \n");
-		
+
 		printf("Enter the dividend: ");
 		scanf("%f", &num1);
-		
+
 		printf("Enter the divisor: ");
 		scanf("%f", &num2);
-		
+
 		solution = num1/num2;
-		
+
 		printf("%f : %f = %f \n", num1, num2, solution);
 	}
-	
+
 	else if(strcmp(argv[1], "-p") == 0) {
-		
+
 		printf("You have selected potentation. \n");
-		
+
 		printf("Enter the number to be potentiated: ");
 		scanf("%f", &num1);
-		
+
 		printf("Enter the power: ");
 		scanf("%f", &num2);
-		
+
 		solution = powf(num1, num2);
-		
-		printf("%f ^ %f = %f \n", num1, num2, solution);	
+
+		printf("%.2f ^ %.2f = %.2f \n", num1, num2, solution);
 	}
-	
+
 	else if(strcmp(argv[1], "-lcm") == 0) {
-		
+
 		int num1, num2, solution;
-		
+
 		printf("You have selected the calculation of the least common multiple. \n");
-		
+
 		printf("Enter the first number: ");
 		scanf("%i", &num1);
-		
+
 		printf("Enter the second number: ");
 		scanf("%i", &num2);
-		
+
 		solution = lcm(num1, num2);
 		printf("The LCM of %i and %i is %i. \n", num1, num2, solution);
 	}
-	
+
 	else if(strcmp(argv[1], "-gcd") == 0) {
-		
+
 		int num1, num2, solution;
 		printf("You have selected the calculation of the greatest common divisor. \n");
-		
+
 		printf("Enter the first number: ");
 		scanf("%i", &num1);
-		
+
 		printf("Enter the second number: ");
 		scanf("%i", &num2);
-		
+
 		solution = gcd(num1, num2);
-		
+
 		printf("The GCD of %i and %i is %i. \n", num1, num2, solution);
 	}
-	
+
 	else if(strcmp(argv[1], "-h") == 0) {
 		help();
 	}
-	
+
 	else
 		help();
 }
